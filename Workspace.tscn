@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Workspace.gd" type="Script" id=1]
+[ext_resource path="res://BodyPart.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WorldEnvironment.gd" type="Script" id=3]
+[ext_resource path="res://BodyPartSlot.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Environment" id=1]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Sprite" parent="." instance=ExtResource( 2 )]
+position = Vector2( 286.186, 151.318 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Sprite2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 297.807, 418.769 )
+[connection signal="ready" from="." to="." method="_on_Node_ready"]
+[connection signal="ready" from="WorldEnvironment" to="." method="_on_WorldEnvironment_ready"]
