@@ -8,4 +8,3 @@ func _ready():
 
 func _on_ConveyerBelt_body_entered(body):
 	body.apply_central_impulse(Vector2(conveyerSpeed, 0))
-
