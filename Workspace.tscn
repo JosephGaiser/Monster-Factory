@@ -40,5 +40,11 @@ scale = Vector2( 1.5, 1.5 )
 [node name="FeetSlot" parent="." instance=ExtResource( 4 )]
 position = Vector2( 117.102, 679.749 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 1923.29
+margin_top = 79.7901
+margin_right = 1963.29
+margin_bottom = 119.79
 [connection signal="ready" from="." to="." method="_on_Node_ready"]
 [connection signal="clicked" from="MonsterHead" to="." method="_on_BodyPart_clicked"]

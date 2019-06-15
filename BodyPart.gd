@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var monsterTypeId: int
-var bodyPartId = 1
+var bodyPartId: int
 
 var held = false
 
@@ -27,7 +27,7 @@ func pickup():
     mode = RigidBody2D.MODE_STATIC
     held = true
 
-func drop(impulse=Vector2.ZERO):
+func drop():
 	if held:
 		mode = RigidBody2D.MODE_RIGID
 		add_force(global_position, Vector2.ZERO)

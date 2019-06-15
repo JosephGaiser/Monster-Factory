@@ -33,10 +33,4 @@ scale = Vector2( 30, 4 )
 frames = SubResource( 2 )
 animation = "Moving"
 frame = 1
-
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 1932.1
-margin_top = 64.5992
-margin_right = 1972.1
-margin_bottom = 104.599
 [connection signal="body_entered" from="." to="." method="_on_ConveyerBelt_body_entered"]
