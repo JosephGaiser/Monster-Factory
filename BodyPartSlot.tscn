@@ -7,7 +7,7 @@
 [ext_resource path="res://container.png" type="Texture" id=5]
 [ext_resource path="res://BodyPartSlot.gd" type="Script" id=6]
 
-[sub_resource type="Shader" id=4]
+[sub_resource type="Shader" id=1]
 code = "shader_type spatial;
 render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
 uniform vec4 albedo : hint_color;
@@ -78,8 +78,8 @@ void fragment() {
 }
 "
 
-[sub_resource type="ShaderMaterial" id=5]
-shader = SubResource( 4 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 shader_param/albedo = Color( 0.78125, 0.78125, 0.78125, 1 )
 shader_param/specular = 0.5
 shader_param/metallic = 0.2
@@ -106,13 +106,15 @@ shader_param/texture_depth = ExtResource( 2 )
 [sub_resource type="RectangleShape2D" id=3]
 
 [node name="BodyPartSlot" type="Sprite"]
-material = SubResource( 5 )
-position = Vector2( 137.469, 113.126 )
-scale = Vector2( -0.42751, 0.375958 )
+material = SubResource( 2 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 5 )
 script = ExtResource( 6 )
 
 [node name="BodyPartSlotArea" type="Area2D" parent="."]
+scale = Vector2( 0.4, 0.4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyPartSlotArea"]
 shape = SubResource( 3 )
+[connection signal="body_entered" from="BodyPartSlotArea" to="." method="_on_BodyPartSlotArea_body_entered"]
+[connection signal="body_shape_entered" from="BodyPartSlotArea" to="." method="_on_BodyPartSlotArea_body_shape_entered"]

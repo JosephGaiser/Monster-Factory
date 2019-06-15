@@ -14,3 +14,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_BodyPartSlotArea_body_entered(body):
+	print("body in")
+
+
+func _on_BodyPartSlotArea_body_shape_entered(body_id, body, body_shape, area_shape):
+	print("body shpae in")

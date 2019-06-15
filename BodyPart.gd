@@ -2,10 +2,9 @@ extends RigidBody2D
 
 var bodyPartId: int
 var monsterTypeId: int
+var held = false
 
 signal clicked
-
-var held = false
 
 func _process(delta):
 	if held:
