@@ -1,23 +1,99 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Workspace.gd" type="Script" id=1]
-[ext_resource path="res://BodyPart.tscn" type="PackedScene" id=2]
-[ext_resource path="res://WorldEnvironment.gd" type="Script" id=3]
-[ext_resource path="res://BodyPartSlot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://WorldEnvironment.gd" type="Script" id=2]
+[ext_resource path="res://ConveyerBelt.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BodyPart.tscn" type="PackedScene" id=4]
+[ext_resource path="res://BodyPartSlot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Wall.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Environment" id=1]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Sprite" parent="." instance=ExtResource( 2 )]
-position = Vector2( 286.186, 151.318 )
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
-[node name="Sprite2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 297.807, 418.769 )
+[node name="ConveyerBelt" parent="." instance=ExtResource( 3 )]
+
+[node name="Sprite" parent="." instance=ExtResource( 4 )]
+position = Vector2( 720, 600 )
+
+[node name="Sprite2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1327.04, 638.368 )
+
+[node name="Barrier" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Wall" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( -180, 256 )
+
+[node name="Wall2" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( -180, 410 )
+
+[node name="Wall3" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( -180, 570 )
+
+[node name="Wall4" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( -180, 730 )
+
+[node name="Wall5" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( -180, 890 )
+
+[node name="Wall6" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( -180, 1050 )
+
+[node name="Wall7" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 6.10352e-05, 1080 )
+
+[node name="Wall8" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 180, 1080 )
+
+[node name="Wall9" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 360, 1080 )
+
+[node name="Wall10" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 540, 1080 )
+
+[node name="Wall11" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 720, 1080 )
+
+[node name="Wall12" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 900, 1080 )
+
+[node name="Wall13" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1080, 1080 )
+
+[node name="Wall14" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1260, 1080 )
+
+[node name="Wall15" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1440, 1080 )
+
+[node name="Wall16" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1620, 1080 )
+
+[node name="Wall17" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1800, 1080 )
+
+[node name="Wall18" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1920, 920 )
+
+[node name="Wall19" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1920, 760 )
+
+[node name="Wall20" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1920, 600 )
+
+[node name="Wall21" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1920, 440 )
+
+[node name="Wall22" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1920, 280 )
+
+[node name="Wall23" parent="Barrier" instance=ExtResource( 6 )]
+position = Vector2( 1920, 250 )
 [connection signal="ready" from="." to="." method="_on_Node_ready"]
 [connection signal="ready" from="WorldEnvironment" to="." method="_on_WorldEnvironment_ready"]
