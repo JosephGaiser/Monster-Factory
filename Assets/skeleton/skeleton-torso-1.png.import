@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skeleton-torso-1.png-cb8dc1b725d111b3679036e5b02c40b9.stex"
+path="res://.import/skeleton-torso-1.png-ad70c237973ce4ee8ac9711de0a5b183.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/skeleton-torso-1.png"
-dest_files=[ "res://.import/skeleton-torso-1.png-cb8dc1b725d111b3679036e5b02c40b9.stex" ]
+source_file="res://Assets/skeleton/skeleton-torso-1.png"
+dest_files=[ "res://.import/skeleton-torso-1.png-ad70c237973ce4ee8ac9711de0a5b183.stex" ]
 
 [params]
 

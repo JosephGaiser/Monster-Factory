@@ -3,9 +3,7 @@ extends Node
 var held_object = null
 
 func _ready():
-	var pickableNodes = get_tree().get_nodes_in_group("pickable")
-	for node in pickableNodes:
-        node.connect("clicked", self, "_on_pickable_clicked")
+	setPickables()
 
 func _on_pickable_clicked(object):
 	if !held_object:
@@ -18,5 +16,7 @@ func _unhandled_input(event):
             held_object.drop(Input.get_last_mouse_speed())
             held_object = null
 
-func _on_Node_ready():
-	pass # Replace with function body.
+func setPickables():
+	var pickableNodes = get_tree().get_nodes_in_group("pickable")
+	for node in pickableNodes:
+        node.connect("clicked", self, "_on_pickable_clicked")

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/skeleton-leg-1.png-d84300e6b678f74801b750d1e844f389.stex"
+path="res://.import/skeleton-leg-1.png-3a9ace290e13a21b60fb0169124837d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/skeleton-leg-1.png"
-dest_files=[ "res://.import/skeleton-leg-1.png-d84300e6b678f74801b750d1e844f389.stex" ]
+source_file="res://Assets/skeleton/skeleton-leg-1.png"
+dest_files=[ "res://.import/skeleton-leg-1.png-3a9ace290e13a21b60fb0169124837d7.stex" ]
 
 [params]
 
