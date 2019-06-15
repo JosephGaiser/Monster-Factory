@@ -26,6 +26,7 @@ z_index = 1
 "pickable",
 ] instance=ExtResource( 3 )]
 position = Vector2( 1093.19, 605.546 )
+rotation = -0.00291161
 z_index = 1
 
 [node name="HeadSlot" parent="." instance=ExtResource( 4 )]
