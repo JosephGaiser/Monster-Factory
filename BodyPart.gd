@@ -1,7 +1,5 @@
 extends RigidBody2D
 
-var bodyPartId: int
-var monsterTypeId: int
 var held = false
 
 signal clicked

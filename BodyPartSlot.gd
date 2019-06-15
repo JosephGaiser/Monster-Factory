@@ -1,24 +1,7 @@
-extends Node
+extends Area2D
 
-var bodyPartId: int
-var monsterTypeId: int
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_BodyPartSlotArea_body_entered(body):
-	print("body in")
-
-
-func _on_BodyPartSlotArea_body_shape_entered(body_id, body, body_shape, area_shape):
-	print("body shpae in")
+func _physics_process(delta):
+	var bodies = get_overlapping_bodies()
+	for body in bodies:
+#		if body.name == "Player":
+		print("collided with player")
