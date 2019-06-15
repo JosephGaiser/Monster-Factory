@@ -1,9 +1,16 @@
 extends Node
 
 var held_object = null
+var spawnRate = 3
+var currentSpawnTime = 0
+
+const bodyPart = preload("res://BodyPart.tscn")
 
 func _ready():
-	setPickables()
+	pass
+	
+func _process(delta):
+	createPart(delta)
 
 func _on_pickable_clicked(object):
 	if !held_object:
@@ -13,10 +20,16 @@ func _on_pickable_clicked(object):
 func _unhandled_input(event):
     if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
         if held_object and !event.pressed:
-            held_object.drop(Input.get_last_mouse_speed())
+            held_object.drop()
             held_object = null
 
-func setPickables():
-	var pickableNodes = get_tree().get_nodes_in_group("pickable")
-	for node in pickableNodes:
-        node.connect("clicked", self, "_on_pickable_clicked")
+func createPart(delta):
+	currentSpawnTime += delta
+	
+	if (currentSpawnTime > spawnRate):
+		currentSpawnTime = 0
+		var part = bodyPart.instance()
+		part.bodyPartId = int(rand_range(1, 4))
+		part.monsterTypeId = 1
+		part.connect("clicked", self, "_on_pickable_clicked")
+		$GridContainer.add_child(part)

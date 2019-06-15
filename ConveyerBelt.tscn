@@ -1,7 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ConveyerBelt.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/belt/belt-0.png" type="Texture" id=3]
+[ext_resource path="res://Assets/belt/belt-1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/belt/belt-2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/belt/belt-3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/belt/belt-4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/belt/belt-5.png" type="Texture" id=8]
+[ext_resource path="res://Assets/belt/belt-6.png" type="Texture" id=9]
+[ext_resource path="res://Assets/belt/belt-7.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1254.55, 74.6 )
@@ -13,10 +21,10 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "Moving",
-"speed": 5.0
+"speed": 4.0
 } ]
 
 [node name="ConveyerBelt" type="Area2D"]
@@ -27,16 +35,8 @@ position = Vector2( 960, 128 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.203922, 0.184314, 0.184314, 1 )
 position = Vector2( 960, 128 )
-scale = Vector2( 30, 4 )
+scale = Vector2( 8, 4 )
 frames = SubResource( 2 )
 animation = "Moving"
-frame = 1
-
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 1932.1
-margin_top = 64.5992
-margin_right = 1972.1
-margin_bottom = 104.599
 [connection signal="body_entered" from="." to="." method="_on_ConveyerBelt_body_entered"]
