@@ -32,6 +32,7 @@ position = Vector2( 960, 128 )
 scale = Vector2( 30, 4 )
 frames = SubResource( 2 )
 animation = "Moving"
+frame = 1
 
 [node name="GridContainer" type="GridContainer" parent="."]
 margin_left = 1932.1
