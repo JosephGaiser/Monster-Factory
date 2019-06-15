@@ -29,7 +29,7 @@ func createPart(delta):
 	if (currentSpawnTime > spawnRate):
 		currentSpawnTime = 0
 		var part = bodyPart.instance()
-		part.bodyPartId = 1
+		part.bodyPartId = int(rand_range(1, 4))
 		part.monsterTypeId = 1
 		part.connect("clicked", self, "_on_pickable_clicked")
 		$GridContainer.add_child(part)
