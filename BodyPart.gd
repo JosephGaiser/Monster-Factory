@@ -15,9 +15,10 @@ func pickup():
     held = true
 
 func drop(impulse=Vector2.ZERO):
-    if held:
-        mode = RigidBody2D.MODE_RIGID
-        held = false
+	if held:
+		mode = RigidBody2D.MODE_RIGID
+		add_force(global_position, Vector2.ZERO)
+		held = false
 
 func _on_BodyPart_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
