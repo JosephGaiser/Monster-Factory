@@ -1,37 +1,28 @@
-extends Sprite
-
-var mouse_in = false
-var dragging = false
-var inContainer = false
+extends RigidBody2D
 
 var bodyPartId: int
 var monsterTypeId: int
 
+signal clicked
+
+var held = false
+
 func _process(delta):
-	if mouse_in && Input.is_action_pressed("left_click"):
-		dragging = true
-		
-	if dragging && Input.is_action_pressed("left_click"):
-		position = get_viewport().get_mouse_position()
-		
-	else:
-		dragging = false
-		if inContainer:
-			print("it's in")
+	if held:
+        global_transform.origin = get_global_mouse_position()
 
-func _on_Area2D_mouse_entered():
-	mouse_in = true
+func pickup():
+    if held:
+        return
+    mode = RigidBody2D.MODE_STATIC
+    held = true
 
-func _on_Area2D_mouse_exited():
-	mouse_in = false
+func drop(impulse=Vector2.ZERO):
+    if held:
+        mode = RigidBody2D.MODE_RIGID
+        held = false
 
-func _on_Area2D_area_entered(area):
-	var areas = area.get_overlapping_areas()
-	for area in areas:
-		if area.name == "BodyPartArea":
-			inContainer = true
-			print("collided with player")
-
-
-func _on_BodyPartArea_area_exited(area):
-	inContainer = false
+func _on_BodyPart_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+        if event.button_index == BUTTON_LEFT and event.pressed:
+            emit_signal("clicked", self)
