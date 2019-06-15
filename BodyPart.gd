@@ -1,11 +1,21 @@
 extends RigidBody2D
 
 var monsterTypeId: int
-var bodyPartId: int
+var bodyPartId = 1
 
 var held = false
 
 signal clicked
+
+func _ready():
+	match bodyPartId:
+		1:
+			get_node("Sprite").play("skeleton-head")
+		2:
+			get_node("Sprite").play("skeleton-torso")
+		3:
+			get_node("Sprite").play("skeleton-leg")
+			
 
 func _process(delta):
 	if held:
