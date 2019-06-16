@@ -23,19 +23,19 @@ color = Color( 0.133333, 0.12549, 0.203922, 1 )
 [node name="MonsterDock" parent="." instance=ExtResource( 2 )]
 position = Vector2( 788.799, 958.947 )
 scale = Vector2( 2.5, 2.5 )
-frame = 9
+frame = 5
 offset = Vector2( -196.557, -141.141 )
 
 [node name="MonsterDock2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1430.76, 959.671 )
 scale = Vector2( 2.5, 2.5 )
-frame = 9
+frame = 5
 offset = Vector2( -196.557, -141.141 )
 
 [node name="MonsterDock3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2095.13, 957.574 )
 scale = Vector2( 2.5, 2.5 )
-frame = 9
+frame = 5
 offset = Vector2( -196.557, -141.141 )
 
 [node name="Top" type="ColorRect" parent="."]
@@ -55,7 +55,8 @@ margin_bottom = -2.09253
 color = Color( 0, 0, 0, 1 )
 
 [node name="ConveyerBelt" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0.806638, 83.6537 )
+position = Vector2( 0.806638, 82.2634 )
+scale = Vector2( 1, 0.8 )
 
 [node name="BodyPartSlot" parent="." groups=[
 "skeletonSlots",
@@ -174,7 +175,7 @@ scale = Vector2( 0.235696, 0.181874 )
 editor/display_folded = true
 
 [node name="OrderBox" type="Sprite" parent="."]
-position = Vector2( 977.04, 997.502 )
+position = Vector2( 977, 1003 )
 scale = Vector2( 1.85138, 0.751091 )
 texture = ExtResource( 7 )
 
