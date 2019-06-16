@@ -2,15 +2,16 @@ extends Area2D
 
 var monsterTypeId: int
 var bodyPartId: int
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+var populated = false
 
 func _on_BodyPartSlot_body_entered(body):
-	print("in")
+	monsterTypeId = body.monsterTypeId
+	bodyPartId = body.bodyPartId
+	populated = true
+	self.get_node("Sprite").set_texture(load("res://Assets/slots/slot-populated.png"))
+
+func _on_BodyPartSlot_body_exited(body):
+	monsterTypeId = 0
+	bodyPartId = 0
+	populated = false
+	self.get_node("Sprite").set_texture(load("res://Assets/slots/slot.png"))
