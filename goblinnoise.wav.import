@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/goblinnoise.wav-08921e2cd403e87be57853843593ba30.sample"
+
+[deps]
+
+source_file="res://goblinnoise.wav"
+dest_files=[ "res://.import/goblinnoise.wav-08921e2cd403e87be57853843593ba30.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
