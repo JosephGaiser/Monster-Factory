@@ -26,7 +26,9 @@ func createPart(delta):
 	if (currentSpawnTime > spawnRate):
 		currentSpawnTime = 0
 		var part = bodyPart.instance()
+		randomize()
 		part.bodyPartId = range(1,4)[randi()%range(1,4).size()]
-		part.monsterTypeId = 1
+		randomize()
+		part.monsterTypeId = range(1,4)[randi()%range(1,4).size()]
 		part.connect("clicked", self, "_on_pickable_clicked")
 		$PartsSpawn.add_child(part)

@@ -36,5 +36,5 @@ func groupDone(groupName):
 	
 func getRightGroup(groups):
 	for group in groups:
-		if not "node" in group:
+		if not "root" in group:
 			return group
