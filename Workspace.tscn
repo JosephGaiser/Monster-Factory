@@ -15,22 +15,25 @@ font_data = ExtResource( 5 )
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
-[node name="MonsterDock" parent="." instance=ExtResource( 2 )]
+[node name="MonsterDock" parent="." groups=[
+"skeletonSlots",
+] instance=ExtResource( 2 )]
 position = Vector2( 788.799, 960.311 )
 scale = Vector2( 2.5, 2.5 )
-frame = 11
 offset = Vector2( -196.557, -141.141 )
 
-[node name="MonsterDock2" parent="." instance=ExtResource( 2 )]
+[node name="MonsterDock2" parent="." groups=[
+"goblinSlots",
+] instance=ExtResource( 2 )]
 position = Vector2( 1430.76, 959.671 )
 scale = Vector2( 2.5, 2.5 )
-frame = 11
 offset = Vector2( -196.557, -141.141 )
 
-[node name="MonsterDock3" parent="." instance=ExtResource( 2 )]
+[node name="MonsterDock3" parent="." groups=[
+"squidSlots",
+] instance=ExtResource( 2 )]
 position = Vector2( 2093.76, 957.574 )
 scale = Vector2( 2.5, 2.5 )
-frame = 11
 offset = Vector2( -196.557, -141.141 )
 
 [node name="Top" type="ColorRect" parent="."]
@@ -126,7 +129,6 @@ margin_right = 2095.75
 margin_bottom = 217.661
 
 [node name="Score" type="Label" parent="."]
-editor/display_folded = true
 margin_left = 162.116
 margin_top = 12.0392
 margin_right = 218.116
