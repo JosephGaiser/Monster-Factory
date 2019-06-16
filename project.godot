@@ -19,6 +19,10 @@ config/name="MonsterFactory"
 run/main_scene="res://Workspace.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameManager="*res://GameManager.tscn"
+
 [display]
 
 window/size/width=1920
@@ -38,4 +42,5 @@ left_click={
 
 [rendering]
 
+environment/default_clear_color=Color( 0.133333, 0.12549, 0.203922, 1 )
 environment/default_environment="res://default_env.tres"

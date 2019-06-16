@@ -15,27 +15,22 @@ font_data = ExtResource( 5 )
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Background" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.133333, 0.12549, 0.203922, 1 )
-
 [node name="MonsterDock" parent="." instance=ExtResource( 2 )]
 position = Vector2( 788.799, 960.311 )
 scale = Vector2( 2.5, 2.5 )
-frame = 8
+frame = 4
 offset = Vector2( -196.557, -141.141 )
 
 [node name="MonsterDock2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1430.76, 959.671 )
 scale = Vector2( 2.5, 2.5 )
-frame = 8
+frame = 4
 offset = Vector2( -196.557, -141.141 )
 
 [node name="MonsterDock3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2093.76, 957.574 )
 scale = Vector2( 2.5, 2.5 )
-frame = 8
+frame = 4
 offset = Vector2( -196.557, -141.141 )
 
 [node name="Top" type="ColorRect" parent="."]
@@ -55,7 +50,7 @@ margin_bottom = -2.09253
 color = Color( 0, 0, 0, 1 )
 
 [node name="ConveyerBelt" parent="." instance=ExtResource( 3 )]
-position = Vector2( 0.806638, 82.2634 )
+position = Vector2( -0.815676, 82.2634 )
 scale = Vector2( 1, 0.8 )
 
 [node name="BodyPartSlot" parent="." groups=[
@@ -124,6 +119,12 @@ scale = Vector2( 1.35, 1.35 )
 position = Vector2( 1607.1, 755.633 )
 scale = Vector2( 1.35, 1.35 )
 
+[node name="PartsSpawn" type="GridContainer" parent="."]
+margin_left = 2055.75
+margin_top = 177.661
+margin_right = 2095.75
+margin_bottom = 217.661
+
 [node name="Score" type="Label" parent="."]
 editor/display_folded = true
 margin_left = 162.116
@@ -178,9 +179,3 @@ editor/display_folded = true
 position = Vector2( 977, 1003 )
 scale = Vector2( 1.85138, 0.751091 )
 texture = ExtResource( 7 )
-
-[node name="PartsSpawn" type="GridContainer" parent="."]
-margin_left = 2055.75
-margin_top = 177.661
-margin_right = 2095.75
-margin_bottom = 217.661
