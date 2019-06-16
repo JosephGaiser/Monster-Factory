@@ -29,15 +29,18 @@ func _on_BodyPartSlot_body_exited(body):
 func groupDone(groupName):
 	var slots = get_tree().get_nodes_in_group(groupName)
 	for slot in slots:
-		var orderWithPart = getOrderWithPart(slot.populatedBodyPartId, slot.populatedMonsterTypeId)
-		if orderWithPart == null:
+		var ordersWithPart = getOrderWithPart(slot.populatedBodyPartId, slot.populatedMonsterTypeId)
+		if ordersWithPart.size() < 1:
 			return false
 		else:
-			return isOrderDone(orderWithPart, slots)
+			for order in ordersWithPart:
+				if isOrderDone(order, slots):
+					return true
+			return false
 		if not slot.populated:
 			return false
-		if slot.populatedBodyPartId != slot.bodyPartId || slot.populatedMonsterTypeId != slot.monsterTypeId:
-			return false
+#		if slot.populatedBodyPartId != slot.bodyPartId || slot.populatedMonsterTypeId != slot.monsterTypeId:
+#			return false
 			
 	return false
 	
@@ -48,17 +51,21 @@ func getRightGroup(groups):
 			
 func getOrderWithPart(bodyPart, monsterId):
 	var orders = gameManager.getOrders()
+	var ordersWithPart: Array
+	ordersWithPart.clear()
+	
 	for order in orders:
 		for parts in order.monsterParts:
-			if parts.monsterTypeId == monsterId && parts.bodyPartId == bodyPart:
-				return order
+			if parts.getMonster() == monsterId && parts.getBodyPart() == bodyPart:
+				ordersWithPart.push_back(order)
+				break
 				
-	return null
+	return ordersWithPart
 	
 func isOrderDone(order, slots):
-	for slot in slots:
-		for monsterPart in order.monsterParts:
-			if monsterPart.monsterTypeId != slot.populatedMonsterTypeId || monsterPart.bodyPartId != slot.populatedBodyPartId:
+	for monsterPart in order.monsterParts:
+		for slot in slots:
+			if monsterPart.getMonster() != slot.populatedMonsterTypeId || monsterPart.getBodyPart() != slot.populatedBodyPartId:
 				return false;
 				
 	return true;

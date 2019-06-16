@@ -8,17 +8,17 @@ func createOrder():
 	order.points = 500
 	order.monsterParts.clear()
 
-	randomize()
 	for i in range(1,4):
-		var monsterPart = MonsterPart.new()		
-		monsterPart.monsterTypeId = range(1,4)[randi()%range(1,4).size()]
+		var monsterPart = MonsterPart.new()
+		randomize()
+		monsterPart.monsterTypeId = range(1,2)[randi()%range(1,2).size()]
 		monsterPart.bodyPartId = i
 		print("order with body part " + String(monsterPart.bodyPartId))
 		print("order with monster part " + String(monsterPart.monsterTypeId))
 		
-		order.monsterParts.push_front(monsterPart)
+		order.monsterParts.push_back(monsterPart)
 		
-	orders.push_front(order)
+	orders.push_back(order)
 	
 func getOrders():
 	return orders
@@ -27,7 +27,7 @@ func removeOrder(order):
 	orders.erase(order)
 	
 func addPoints(toAdd):
-	points += toAdd
+	points += toAdd	
 
 class Order:
 	var monsterParts: Array
@@ -36,3 +36,9 @@ class Order:
 class MonsterPart:
 	var monsterTypeId: int
 	var bodyPartId: int
+	
+	func getMonster():
+		return monsterTypeId
+		
+	func getBodyPart():
+		return bodyPartId

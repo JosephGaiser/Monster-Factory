@@ -2,7 +2,7 @@ extends Node
 
 var held_object = null
 var spawnRate = 5
-var orderRate = 20
+var orderRate = 40
 var currentSpawnTime = 0
 var currentOrderTime = 0
 
@@ -40,7 +40,8 @@ func createPart(delta):
 		var part = bodyPart.instance()
 		randomize()
 		part.bodyPartId = range(1,4)[randi()%range(1,4).size()]
-		part.monsterTypeId = range(1,4)[randi()%range(1,4).size()]
+		randomize()
+		part.monsterTypeId = range(1,2)[randi()%range(1,2).size()]
 		part.connect("clicked", self, "_on_pickable_clicked")
 		$PartsSpawn.add_child(part)
 		
@@ -48,7 +49,7 @@ func createOrder(delta):
 	currentOrderTime += delta
 	currentOrdersDelay += delta
 	
-	if (currentOrderTime > orderRate && currentOrdersDelay > ordersDelay):
+	if (currentOrderTime > orderRate):
 		currentOrderTime = 0
 		gameManager.createOrder()
 		
