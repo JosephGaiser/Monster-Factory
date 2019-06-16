@@ -1,11 +1,18 @@
 extends Node
 
 var held_object = null
-var spawnRate = 10
-var orderRate = 3
+var spawnRate = 5
+var orderRate = 12
 var currentSpawnTime = 0
 var currentOrderTime = 0
+
+var ordersDelay = 2
+var spawnDelay = 5
+var currentOrdersDelay = 0
+var currentSpawnDelay = 0
 var orders: Array
+
+onready var gameManager = get_node("/root/GameManager")
 
 const bodyPart = preload("res://BodyPart.tscn")
 	
@@ -26,8 +33,9 @@ func _unhandled_input(event):
 
 func createPart(delta):
 	currentSpawnTime += delta
+	currentSpawnDelay += delta
 	
-	if (currentSpawnTime > spawnRate):
+	if (currentSpawnTime > spawnRate && currentSpawnDelay > spawnDelay):
 		currentSpawnTime = 0
 		var part = bodyPart.instance()
 		randomize()
@@ -39,25 +47,9 @@ func createPart(delta):
 		
 func createOrder(delta):
 	currentOrderTime += delta
+	currentOrdersDelay += delta
 	
-	if (currentOrderTime > orderRate):
+	if (currentOrderTime > orderRate && currentOrdersDelay > ordersDelay):
 		currentOrderTime = 0
-		var order = Order.new()
-		order.points = 500
-		randomize()
-		for i in range(1,3):
-			randomize()
-			var monsterPart = MonsterPart.new()
-			monsterPart.monsterTypeId = range(1,4)[randi()%range(1,4).size()]
-			monsterPart.bodyPartId = i
-			order.monsterParts.push_front(monsterPart)
-			
-		orders.push_front(order)
+		gameManager.createOrder()
 		
-class Order:
-	var monsterParts: Array
-	var points: int
-	
-class MonsterPart:
-	var monsterTypeId: int
-	var bodyPartId: int
