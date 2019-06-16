@@ -1,82 +1,181 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Workspace.gd" type="Script" id=1]
-[ext_resource path="res://ConveyerBelt.tscn" type="PackedScene" id=2]
-[ext_resource path="res://BodyPartSlot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Dock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ConveyerBelt.tscn" type="PackedScene" id=3]
+[ext_resource path="res://BodyPartSlot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/dpcomic.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://frame.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/ui/order-border.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 5 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
-[node name="ConveyerBelt" parent="." instance=ExtResource( 2 )]
-position = Vector2( 3.25366, 123.635 )
+[node name="MonsterDock" parent="." instance=ExtResource( 2 )]
+position = Vector2( 788.799, 960.311 )
+scale = Vector2( 2.5, 2.5 )
+frame = 4
+offset = Vector2( -196.557, -141.141 )
+
+[node name="MonsterDock2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1430.76, 959.671 )
+scale = Vector2( 2.5, 2.5 )
+frame = 4
+offset = Vector2( -196.557, -141.141 )
+
+[node name="MonsterDock3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2093.76, 957.574 )
+scale = Vector2( 2.5, 2.5 )
+frame = 4
+offset = Vector2( -196.557, -141.141 )
+
+[node name="Top" type="ColorRect" parent="."]
+anchor_right = 1.0
+margin_left = -1.9682
+margin_top = 0.604935
+margin_right = -1.96826
+margin_bottom = 137.605
+color = Color( 0, 0, 0, 1 )
+
+[node name="Bottom" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -155.093
+margin_bottom = -2.09253
+color = Color( 0, 0, 0, 1 )
+
+[node name="ConveyerBelt" parent="." instance=ExtResource( 3 )]
+position = Vector2( -0.815676, 82.2634 )
+scale = Vector2( 1, 0.8 )
 
 [node name="BodyPartSlot" parent="." groups=[
 "skeletonSlots",
-] instance=ExtResource( 3 )]
-position = Vector2( 442.482, 523.82 )
+] instance=ExtResource( 4 )]
+position = Vector2( 299.928, 441.698 )
+scale = Vector2( 1.35, 1.35 )
 monsterTypeId = 1
 bodyPartId = 1
 
 [node name="BodyPartSlot2" parent="." groups=[
 "skeletonSlots",
-] instance=ExtResource( 3 )]
-position = Vector2( 439.228, 725.54 )
+] instance=ExtResource( 4 )]
+position = Vector2( 301.223, 602.475 )
+scale = Vector2( 1.35, 1.35 )
 monsterTypeId = 1
 bodyPartId = 2
 
 [node name="BodyPartSlot3" parent="." groups=[
 "skeletonSlots",
-] instance=ExtResource( 3 )]
-position = Vector2( 439.228, 924.006 )
+] instance=ExtResource( 4 )]
+position = Vector2( 300.613, 757.382 )
+scale = Vector2( 1.35, 1.35 )
 monsterTypeId = 1
 bodyPartId = 3
 
 [node name="BodyPartSlot4" parent="." groups=[
 "goblinSlots",
-] instance=ExtResource( 3 )]
-position = Vector2( 897.981, 523.82 )
+] instance=ExtResource( 4 )]
+position = Vector2( 942.576, 441.397 )
+scale = Vector2( 1.35, 1.35 )
 monsterTypeId = 2
 bodyPartId = 1
 
 [node name="BodyPartSlot5" parent="." groups=[
 "goblinSlots",
-] instance=ExtResource( 3 )]
-position = Vector2( 901.228, 728.794 )
+] instance=ExtResource( 4 )]
+position = Vector2( 943.623, 601.712 )
+scale = Vector2( 1.35, 1.35 )
 monsterTypeId = 2
 bodyPartId = 2
 
 [node name="BodyPartSlot6" parent="." groups=[
 "goblinSlots",
-] instance=ExtResource( 3 )]
-position = Vector2( 901.228, 924.006 )
+] instance=ExtResource( 4 )]
+position = Vector2( 943.673, 758.637 )
+scale = Vector2( 1.35, 1.35 )
 monsterTypeId = 2
 bodyPartId = 3
 
 [node name="BodyPartSlot7" parent="." groups=[
 "squidSlots",
-] instance=ExtResource( 3 )]
-position = Vector2( 1304.67, 510.807 )
+] instance=ExtResource( 4 )]
+position = Vector2( 1606.14, 439.527 )
+scale = Vector2( 1.35, 1.35 )
 
 [node name="BodyPartSlot8" parent="." groups=[
 "squidSlots",
-] instance=ExtResource( 3 )]
-position = Vector2( 1311.18, 728.794 )
+] instance=ExtResource( 4 )]
+position = Vector2( 1607.54, 598.629 )
+scale = Vector2( 1.35, 1.35 )
 
 [node name="BodyPartSlot9" parent="." groups=[
 "squidSlots",
-] instance=ExtResource( 3 )]
-position = Vector2( 1311.18, 933.768 )
+] instance=ExtResource( 4 )]
+position = Vector2( 1607.1, 755.633 )
+scale = Vector2( 1.35, 1.35 )
 
 [node name="PartsSpawn" type="GridContainer" parent="."]
-margin_left = 1926.54
-margin_top = 220.157
-margin_right = 1966.54
-margin_bottom = 260.157
+margin_left = 2055.75
+margin_top = 177.661
+margin_right = 2095.75
+margin_bottom = 217.661
 
-[node name="Label" type="Label" parent="."]
-margin_left = 32.5354
-margin_top = 42.2961
-margin_right = 88.5354
-margin_bottom = 56.2961
+[node name="Score" type="Label" parent="."]
+editor/display_folded = true
+margin_left = 162.116
+margin_top = 12.0392
+margin_right = 218.116
+margin_bottom = 29.0392
 rect_scale = Vector2( 4.66844, 5.67125 )
+custom_fonts/font = SubResource( 1 )
 text = "Points: 0"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Frame" parent="Score" instance=ExtResource( 6 )]
+position = Vector2( 27.5594, 7.35852 )
+scale = Vector2( 0.217222, 0.181874 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 689.885
+margin_top = 10.9293
+margin_right = 800.885
+margin_bottom = 27.9293
+rect_scale = Vector2( 4.66844, 5.67125 )
+custom_fonts/font = SubResource( 1 )
+text = "Monster Factory"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Time" type="Label" parent="."]
+editor/display_folded = true
+margin_left = 1446.37
+margin_top = 10.1519
+margin_right = 1502.37
+margin_bottom = 27.1519
+rect_scale = Vector2( 4.66844, 5.67125 )
+custom_fonts/font = SubResource( 1 )
+text = "Time: 60"
+align = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Frame" parent="Time" instance=ExtResource( 6 )]
+position = Vector2( 30.3305, 7.35852 )
+scale = Vector2( 0.235696, 0.181874 )
+
+[node name="Docks" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="OrderBox" type="Sprite" parent="."]
+position = Vector2( 977, 1003 )
+scale = Vector2( 1.85138, 0.751091 )
+texture = ExtResource( 7 )
