@@ -21,21 +21,21 @@ anchor_bottom = 1.0
 color = Color( 0.133333, 0.12549, 0.203922, 1 )
 
 [node name="MonsterDock" parent="." instance=ExtResource( 2 )]
-position = Vector2( 788.799, 958.947 )
+position = Vector2( 788.799, 960.311 )
 scale = Vector2( 2.5, 2.5 )
-frame = 5
+frame = 8
 offset = Vector2( -196.557, -141.141 )
 
 [node name="MonsterDock2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1430.76, 959.671 )
 scale = Vector2( 2.5, 2.5 )
-frame = 5
+frame = 8
 offset = Vector2( -196.557, -141.141 )
 
 [node name="MonsterDock3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2095.13, 957.574 )
+position = Vector2( 2093.76, 957.574 )
 scale = Vector2( 2.5, 2.5 )
-frame = 5
+frame = 8
 offset = Vector2( -196.557, -141.141 )
 
 [node name="Top" type="ColorRect" parent="."]
