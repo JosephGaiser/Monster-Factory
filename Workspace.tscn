@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Workspace.gd" type="Script" id=1]
 [ext_resource path="res://Dock.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/dpcomic.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://frame.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/ui/order-border.png" type="Texture" id=7]
+[ext_resource path="res://ambience.wav" type="AudioStream" id=8]
+[ext_resource path="res://conveyerbase.wav" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -181,4 +183,17 @@ editor/display_folded = true
 position = Vector2( 977, 1003 )
 scale = Vector2( 1.85138, 0.751091 )
 texture = ExtResource( 7 )
+
+[node name="audio" type="Node" parent="."]
+
+[node name="ambient" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="belt" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource( 9 )
+volume_db = -15.0
+autoplay = true
+
+[node name="song" type="AudioStreamPlayer" parent="audio"]
 [connection signal="ready" from="." to="." method="_on_Node_ready"]

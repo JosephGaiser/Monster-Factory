@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://BodyPart.gd" type="Script" id=1]
 [ext_resource path="res://Assets/squid/squid-leg-0.png" type="Texture" id=2]
@@ -38,6 +38,9 @@
 [ext_resource path="res://Assets/goblin/goblin-torso-0.png" type="Texture" id=36]
 [ext_resource path="res://Assets/goblin/goblin-torso-1.png" type="Texture" id=37]
 [ext_resource path="res://Assets/goblin/goblin-torso-2.png" type="Texture" id=38]
+[ext_resource path="res://slimenoise.wav" type="AudioStream" id=39]
+[ext_resource path="res://goblinnoise.wav" type="AudioStream" id=40]
+[ext_resource path="res://skeleton.wav" type="AudioStream" id=41]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64.561, 63.873 )
@@ -108,4 +111,13 @@ shape = SubResource( 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "squid-leg"
+
+[node name="audiosquid" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 39 )
+
+[node name="audiogoblin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 40 )
+
+[node name="audioskeleton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 41 )
 [connection signal="input_event" from="." to="." method="_on_BodyPart_input_event"]
