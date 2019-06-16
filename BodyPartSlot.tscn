@@ -7,6 +7,7 @@
 extents = Vector2( 50.561, 45.873 )
 
 [node name="BodyPartSlot" type="Area2D"]
+scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
