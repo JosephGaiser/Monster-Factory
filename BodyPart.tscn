@@ -1,38 +1,94 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://BodyPart.gd" type="Script" id=1]
-[ext_resource path="res://Assets/skeleton/skeleton-head-0.png" type="Texture" id=2]
-[ext_resource path="res://Assets/skeleton/skeleton-head-1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/skeleton/skeleton-head-2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/skeleton/skeleton-head-3.png" type="Texture" id=5]
-[ext_resource path="res://Assets/skeleton/skeleton-leg-0.png" type="Texture" id=6]
-[ext_resource path="res://Assets/skeleton/skeleton-leg-1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/skeleton/skeleton-leg-2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/skeleton/skeleton-torso-0.png" type="Texture" id=9]
-[ext_resource path="res://Assets/skeleton/skeleton-torso-1.png" type="Texture" id=10]
-[ext_resource path="res://Assets/skeleton/skeleton-torso-2.png" type="Texture" id=11]
-[ext_resource path="res://Assets/skeleton/skeleton-torso-3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/goblin/goblin-torso-0.png" type="Texture" id=2]
+[ext_resource path="res://Assets/goblin/goblin-torso-1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/goblin/goblin-torso-2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/squid/squid-head-0.png" type="Texture" id=5]
+[ext_resource path="res://Assets/squid/squid-head-1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/squid/squid-head-2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/squid/squid-head-3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/squid/squid-head-4.png" type="Texture" id=9]
+[ext_resource path="res://Assets/squid/squid-head-5.png" type="Texture" id=10]
+[ext_resource path="res://Assets/squid/squid-head-6.png" type="Texture" id=11]
+[ext_resource path="res://Assets/skeleton/skeleton-head-0.png" type="Texture" id=12]
+[ext_resource path="res://Assets/skeleton/skeleton-head-1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/skeleton/skeleton-head-2.png" type="Texture" id=14]
+[ext_resource path="res://Assets/skeleton/skeleton-head-3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/skeleton/skeleton-leg-0.png" type="Texture" id=16]
+[ext_resource path="res://Assets/skeleton/skeleton-leg-1.png" type="Texture" id=17]
+[ext_resource path="res://Assets/skeleton/skeleton-leg-2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/skeleton/skeleton-torso-0.png" type="Texture" id=19]
+[ext_resource path="res://Assets/skeleton/skeleton-torso-1.png" type="Texture" id=20]
+[ext_resource path="res://Assets/skeleton/skeleton-torso-2.png" type="Texture" id=21]
+[ext_resource path="res://Assets/skeleton/skeleton-torso-3.png" type="Texture" id=22]
+[ext_resource path="res://Assets/goblin/goblin-leg-0.png" type="Texture" id=23]
+[ext_resource path="res://Assets/goblin/goblin-leg-1.png" type="Texture" id=24]
+[ext_resource path="res://Assets/goblin/goblin-leg-2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/squid/squid-torso-0.png" type="Texture" id=26]
+[ext_resource path="res://Assets/squid/squid-torso-1.png" type="Texture" id=27]
+[ext_resource path="res://Assets/squid/squid-torso-2.png" type="Texture" id=28]
+[ext_resource path="res://Assets/squid/squid-torso-3.png" type="Texture" id=29]
+[ext_resource path="res://Assets/squid/squid-torso-4.png" type="Texture" id=30]
+[ext_resource path="res://Assets/squid/squid-leg-0.png" type="Texture" id=31]
+[ext_resource path="res://Assets/squid/squid-leg-1.png" type="Texture" id=32]
+[ext_resource path="res://Assets/squid/squid-leg-2.png" type="Texture" id=33]
+[ext_resource path="res://Assets/squid/squid-leg-3.png" type="Texture" id=34]
+[ext_resource path="res://Assets/squid/squid-leg-4.png" type="Texture" id=35]
+[ext_resource path="res://Assets/goblin/goblin-head-0.png" type="Texture" id=36]
+[ext_resource path="res://Assets/goblin/goblin-head-1.png" type="Texture" id=37]
+[ext_resource path="res://Assets/goblin/goblin-head-2.png" type="Texture" id=38]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64.561, 63.873 )
+
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "goblin-torso",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "squid-head",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "skeleton-head",
-"speed": 5.0
+"speed": 3.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "skeleton-leg",
-"speed": 5.0
+"speed": 3.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "skeleton-torso",
 "speed": 3.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "goblin-leg",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "squid-torso",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "squid-leg",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "goblin-head",
+"speed": 3.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 64.561, 63.873 )
 
 [node name="BodyPart" type="RigidBody2D"]
 input_pickable = true
@@ -43,12 +99,13 @@ linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource( 1 )
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
-modulate = Color( 0.976471, 0.6, 0.6, 1 )
-scale = Vector2( 4, 4 )
-frames = SubResource( 1 )
-animation = "skeleton-torso"
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+visible = false
+position = Vector2( 0.290375, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 2 )
+animation = "squid-leg"
 [connection signal="input_event" from="." to="." method="_on_BodyPart_input_event"]
