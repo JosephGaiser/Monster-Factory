@@ -1,13 +1,16 @@
 extends Node
 
 var held_object = null
-var spawnRate = 3
+var spawnRate = 10
+var orderRate = 3
 var currentSpawnTime = 0
+var currentOrderTime = 0
 
 const bodyPart = preload("res://BodyPart.tscn")
 	
 func _process(delta):
 	createPart(delta)
+	createOrder(delta)
 
 func _on_pickable_clicked(object):
 	if !held_object:
@@ -33,7 +36,24 @@ func createPart(delta):
 		part.connect("clicked", self, "_on_pickable_clicked")
 		$PartsSpawn.add_child(part)
 		
+func createOrder(delta):
+	currentOrderTime += delta
+	
+	if (currentOrderTime > orderRate):
+		currentOrderTime = 0
+		var order = Order.new()
+		randomize()
+		for i in range(1,3):
+			randomize()
+			var monsterPart = MonsterPart.new()
+			monsterPart.monsterTypeId = range(1,4)[randi()%range(1,4).size()]
+			monsterPart.bodyPartId = i
+			order.monsterParts.push_front(monsterPart)
+		
 class Order:
+	var monsterParts: Array
+	var bountyPoints: int
+	
+class MonsterPart:
 	var monsterTypeId: int
 	var bodyPartId: int
-	var bountyPoints: int

@@ -65,7 +65,7 @@ position = Vector2( 1311.18, 728.794 )
 [node name="BodyPartSlot9" parent="." groups=[
 "squidSlots",
 ] instance=ExtResource( 3 )]
-position = Vector2( 1304.67, 946.782 )
+position = Vector2( 1311.18, 933.768 )
 
 [node name="PartsSpawn" type="GridContainer" parent="."]
 margin_left = 1926.54
