@@ -16,8 +16,6 @@ func _on_BodyPartSlot_body_entered(body):
 		body.inSlot = true
 		self.get_node("Sprite").set_texture(load("res://Assets/slots/slot-populated.png"))
 		
-		print("entered with body part " + String(body.bodyPartId))
-		print("entered with monster part " + String(body.monsterTypeId))
 		if groupDone(getRightGroup(self.get_groups())):
 			print("won")
 
@@ -34,12 +32,14 @@ func groupDone(groupName):
 		var orderWithPart = getOrderWithPart(slot.populatedBodyPartId, slot.populatedMonsterTypeId)
 		if orderWithPart == null:
 			return false
+		else:
+			return isOrderDone(orderWithPart, slots)
 		if not slot.populated:
 			return false
 		if slot.populatedBodyPartId != slot.bodyPartId || slot.populatedMonsterTypeId != slot.monsterTypeId:
 			return false
 			
-	return true
+	return false
 	
 func getRightGroup(groups):
 	for group in groups:
@@ -50,11 +50,15 @@ func getOrderWithPart(bodyPart, monsterId):
 	var orders = gameManager.getOrders()
 	for order in orders:
 		for parts in order.monsterParts:
-			print("checking order monster" + String(parts.monsterTypeId) +
-			" entered monster " + String(monsterId) + " order part " + String(parts.bodyPartId)
-			+ " entered part " + String(bodyPart)) 
 			if parts.monsterTypeId == monsterId && parts.bodyPartId == bodyPart:
 				return order
 				
 	return null
 	
+func isOrderDone(order, slots):
+	for slot in slots:
+		for monsterPart in order.monsterParts:
+			if monsterPart.monsterTypeId != slot.populatedMonsterTypeId || monsterPart.bodyPartId != slot.populatedBodyPartId:
+				return false;
+				
+	return true;

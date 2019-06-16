@@ -2,11 +2,11 @@ extends Node
 
 var held_object = null
 var spawnRate = 5
-var orderRate = 12
+var orderRate = 20
 var currentSpawnTime = 0
 var currentOrderTime = 0
 
-var ordersDelay = 2
+var ordersDelay = 1
 var spawnDelay = 5
 var currentOrdersDelay = 0
 var currentSpawnDelay = 0
@@ -40,7 +40,6 @@ func createPart(delta):
 		var part = bodyPart.instance()
 		randomize()
 		part.bodyPartId = range(1,4)[randi()%range(1,4).size()]
-		randomize()
 		part.monsterTypeId = range(1,4)[randi()%range(1,4).size()]
 		part.connect("clicked", self, "_on_pickable_clicked")
 		$PartsSpawn.add_child(part)
