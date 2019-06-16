@@ -15,6 +15,7 @@ func _on_BodyPartSlot_body_entered(body):
 		populated = true
 		body.inSlot = true
 		self.get_node("Sprite").set_texture(load("res://Assets/slots/slot-populated.png"))
+		get_node("click").play()
 		
 		if groupDone(getRightGroup(self.get_groups())):
 			print("won")
