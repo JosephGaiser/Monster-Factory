@@ -44,7 +44,6 @@ func drop():
 		held = false
 
 func _on_BodyPart_input_event(viewport, event, shape_idx):
-	print("adsadadasdsd")
 	if event is InputEventMouseButton:
         if event.button_index == BUTTON_LEFT and event.pressed:
             emit_signal("clicked", self)

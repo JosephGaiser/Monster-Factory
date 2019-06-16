@@ -41,7 +41,7 @@ func createPart(delta):
 		randomize()
 		part.bodyPartId = range(1,4)[randi()%range(1,4).size()]
 		randomize()
-		part.monsterTypeId = range(1,2)[randi()%range(1,2).size()]
+		part.monsterTypeId = range(1,4)[randi()%range(1,4).size()]
 		part.connect("clicked", self, "_on_pickable_clicked")
 		$PartsSpawn.add_child(part)
 		
@@ -53,3 +53,6 @@ func createOrder(delta):
 		currentOrderTime = 0
 		gameManager.createOrder()
 		
+
+func _on_Node_ready():
+	gameManager.createOrder()
