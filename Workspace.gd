@@ -32,3 +32,8 @@ func createPart(delta):
 		part.monsterTypeId = range(1,4)[randi()%range(1,4).size()]
 		part.connect("clicked", self, "_on_pickable_clicked")
 		$PartsSpawn.add_child(part)
+		
+class Order:
+	var monsterTypeId: int
+	var bodyPartId: int
+	var bountyPoints: int
