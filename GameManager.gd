@@ -11,7 +11,7 @@ func createOrder():
 	for i in range(1,4):
 		var monsterPart = MonsterPart.new()
 		randomize()
-		monsterPart.monsterTypeId = range(1,3)[randi()%range(1,3).size()]
+		monsterPart.monsterTypeId = randi() % 4
 		monsterPart.bodyPartId = i
 		print("order with body part " + String(monsterPart.bodyPartId))
 		print("order with monster part " + String(monsterPart.monsterTypeId))
