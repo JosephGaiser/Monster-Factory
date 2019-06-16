@@ -45,5 +45,12 @@ func drop():
 
 func _on_BodyPart_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-        if event.button_index == BUTTON_LEFT and event.pressed:
-            emit_signal("clicked", self)
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			match monsterTypeId:
+				1:
+					get_node("audioskeleton").play()
+				2:
+					get_node("audiogoblin").play()
+				3:
+					get_node("audiosquid").play()
+			emit_signal("clicked", self)
