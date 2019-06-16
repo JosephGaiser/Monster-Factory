@@ -1,0 +1,31 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/slot-dock/slot-dock1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/slot-dock/slot-dock2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/slot-dock/slot-dock3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/slot-dock/slot-dock4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/slot-dock/slot-dock5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/slot-dock/slot-dock6.png" type="Texture" id=6]
+[ext_resource path="res://Assets/slot-dock/slot-dock7.png" type="Texture" id=7]
+[ext_resource path="res://Assets/slot-dock/slot-dock8.png" type="Texture" id=8]
+[ext_resource path="res://Assets/slot-dock/slot-dock9.png" type="Texture" id=9]
+[ext_resource path="res://Assets/slot-dock/slot-dock10.png" type="Texture" id=10]
+[ext_resource path="res://Assets/slot-dock/slot-dock11.png" type="Texture" id=11]
+[ext_resource path="res://Assets/slot-dock/slot-dock12.png" type="Texture" id=12]
+[ext_resource path="res://Assets/slot-dock/slot-dock13.png" type="Texture" id=13]
+[ext_resource path="res://Assets/slot-dock/slot-dock14.png" type="Texture" id=14]
+[ext_resource path="res://Assets/slot-dock/slot-dock15.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Finished",
+"speed": 5.0
+} ]
+
+[node name="MonsterDock" type="AnimatedSprite"]
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "Finished"
+frame = 2

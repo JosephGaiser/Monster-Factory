@@ -5,6 +5,7 @@ var spawnRate = 10
 var orderRate = 3
 var currentSpawnTime = 0
 var currentOrderTime = 0
+var orders: Array
 
 const bodyPart = preload("res://BodyPart.tscn")
 	
@@ -42,6 +43,7 @@ func createOrder(delta):
 	if (currentOrderTime > orderRate):
 		currentOrderTime = 0
 		var order = Order.new()
+		order.points = 500
 		randomize()
 		for i in range(1,3):
 			randomize()
@@ -49,10 +51,12 @@ func createOrder(delta):
 			monsterPart.monsterTypeId = range(1,4)[randi()%range(1,4).size()]
 			monsterPart.bodyPartId = i
 			order.monsterParts.push_front(monsterPart)
+			
+		orders.push_front(order)
 		
 class Order:
 	var monsterParts: Array
-	var bountyPoints: int
+	var points: int
 	
 class MonsterPart:
 	var monsterTypeId: int
