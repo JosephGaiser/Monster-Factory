@@ -8,14 +8,24 @@ var held = false
 signal clicked
 
 func _ready():
+	var animationName = ""
+	match monsterTypeId:
+		1:
+			animationName += "skeleton-"
+		2:
+			animationName += "goblin-"
+		3:
+			animationName += "squid-"
+			
 	match bodyPartId:
 		1:
-			get_node("Sprite").play("skeleton-head")
+			animationName += "head"
 		2:
-			get_node("Sprite").play("skeleton-torso")
+			animationName += "torso"
 		3:
-			get_node("Sprite").play("skeleton-leg")
+			animationName += "leg"
 			
+	get_node("Sprite").play(animationName)
 
 func _process(delta):
 	if held:

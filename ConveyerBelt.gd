@@ -1,6 +1,6 @@
 extends Area2D
 
-var conveyerSpeed = -0.2
+var conveyerSpeed = -0.5
 
 func _ready():
 	var sprite = get_node("Sprite")
